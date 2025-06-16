@@ -6,8 +6,6 @@ import CardLoad from "../Loading/CardLoad";
 function QuoteBox() {
   const apiKey: string = import.meta.env.VITE_QUOTES_API_KEY;
   let url = "https://api.api-ninjas.com/v1/quotes";
-  let text =
-    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, nisi. Vitae iure aliquam optio magni dolorum. Eos asperiores incidunt facilis, consequuntur voluptatum ab impedit natus, ut dicta enim est excepturi aperiam laboriosam recusandae nam debitis aspernatur quasi harum ex cum?";
   // states
   const [quote, setQuote] = useState("");
   const [author, setAuthor] = useState("");
@@ -28,12 +26,6 @@ function QuoteBox() {
           ? data[0].quote.split(" ").slice(0, 50).join("") + "..."
           : data[0].quote;
       setQuote(shortQuote);
-      // let compactQuote: string[] = data[0].quote.split("");
-      // if (compactQuote.length <= 50) {
-      //   setQuote(data[0].quote);
-      // } else {
-      //   setQuote(text);
-      // }
       setAuthor(data[0].author);
       setCategory(data[0].category);
     } catch (error) {
